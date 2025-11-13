@@ -128,16 +128,32 @@ export function DataDashboard() {
         </main>
       </div>
 
-      <footer className="border-t border-border/50 bg-card/60 backdrop-blur-sm mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center space-y-2">
-            <p className="text-sm font-bold text-foreground">LaSalle College High School</p>
-            <p className="text-sm text-muted-foreground">
-              Pennsylvania Political Survey Dashboard • November 2025 • {surveyData.length} Responses
-            </p>
-          </div>
+return (
+  <div>
+    {/* your page content above */}
+
+    <footer className="border-t border-border/50 bg-card/60 backdrop-blur-sm mt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="text-center space-y-2">
+          <p className="text-sm font-bold text-foreground">
+            LaSalle College High School
+          </p>
+
+          <p className="text-sm text-muted-foreground">
+            Pennsylvania Political Survey Dashboard • November 2025 • {surveyData.length} Responses
+          </p>
+
+          <a
+            href="https://github.com/xenonn1337/ls-data-analysis"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+          >
+            github.com/xenonn1337/ls-data-analysis
+          </a>
         </div>
-      </footer>
-    </div>
-  )
+      </div>
+    </footer>
+  </div>
+)
 }
