@@ -20,6 +20,8 @@ export function DataDashboard() {
 
   return (
     <div className="min-h-screen bg-background relative">
+
+      {/* HEADER */}
       <header className="border-b border-border/50 bg-card/80 backdrop-blur-xl sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -60,7 +62,10 @@ export function DataDashboard() {
         </div>
       </header>
 
+      {/* LAYOUT */}
       <div className="flex">
+
+        {/* SIDEBAR */}
         <aside
           className={`fixed lg:sticky top-20 left-0 h-[calc(100vh-5rem)] bg-card border-r border-border/50 z-40 transition-transform duration-300 ${
             sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
@@ -81,6 +86,7 @@ export function DataDashboard() {
               <Lightbulb className="w-5 h-5" />
               Key Insights
             </button>
+
             <button
               onClick={() => {
                 setCurrentPage("explorer")
@@ -116,6 +122,7 @@ export function DataDashboard() {
           </nav>
         </aside>
 
+        {/* OVERLAY FOR MOBILE */}
         {sidebarOpen && (
           <div
             className="fixed inset-0 bg-background/80 backdrop-blur-sm z-30 lg:hidden"
@@ -123,37 +130,36 @@ export function DataDashboard() {
           />
         )}
 
+        {/* MAIN CONTENT */}
         <main className="flex-1 p-6 lg:p-12 fade-in">
           {currentPage === "insights" ? <InsightsPage /> : <DynamicExplorer />}
         </main>
       </div>
 
-return (
-  <div>
-    {/* your page content above */}
+      {/* FOOTER */}
+      <footer className="border-t border-border/50 bg-card/60 backdrop-blur-sm mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center space-y-2">
+            <p className="text-sm font-bold text-foreground">
+              LaSalle College High School
+            </p>
 
-    <footer className="border-t border-border/50 bg-card/60 backdrop-blur-sm mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center space-y-2">
-          <p className="text-sm font-bold text-foreground">
-            LaSalle College High School
-          </p>
+            <p className="text-sm text-muted-foreground">
+              Pennsylvania Political Survey Dashboard • November 2025 • {surveyData.length} Responses
+            </p>
 
-          <p className="text-sm text-muted-foreground">
-            Pennsylvania Political Survey Dashboard • November 2025 • {surveyData.length} Responses
-          </p>
-
-          <a
-            href="https://github.com/xenonn1337/ls-data-analysis"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
-          >
-            github.com/xenonn1337/ls-data-analysis
-          </a>
+            <a
+              href="https://github.com/xenonn1337/ls-data-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+            >
+              github.com/xenonn1337/ls-data-analysis
+            </a>
+          </div>
         </div>
-      </div>
-    </footer>
-  </div>
-)
+      </footer>
+
+    </div>
+  )
 }
